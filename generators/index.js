@@ -1,14 +1,17 @@
 // function* testGenerator(){
 //     let i =0
-//     while (i<3) {
-//         yield i++;
+//     while (i<10) {
+      
+//         yield i+=2;
 //     }
 // }
-// test = testGenerator()
-// console.log(test.next())
-// console.log(test.next())
-// console.log(test.next())
-// console.log(test.next())
+// test = testGenerator();
+// let result = test.next();
+
+// while (!result.done) {
+//   console.log(result); // 1 3 5 7 9
+//   result = test.next();
+//  }
 
 // function* fibbo(i){
 //     if (i>1) {
@@ -42,5 +45,6 @@ function *fibonacci(n = null, current = 0, next = 1) {
     yield current;
     yield *fibonacci(m, next, current + next);
 }
-let [...first10] = fibonacci(2000)
-console.log(first10[1999])
+let [...fiboArray] = fibonacci(10)
+console.log(typeof(fibonacci(10)))
+
